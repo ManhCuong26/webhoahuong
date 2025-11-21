@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+  .boxtext {
+    float: left;
+    width: 50%;
+  }
+  .boxproduct {
+    border: 1px solid #f6f6f6;
+    padding: 30px;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    box-shadow: -2px 2px 5px 3px #cfcbcb;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  .button-product {
+    padding: 10px 50px;
+    border: 1px solid #221902;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #221902;
+    color: white;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+  }
+  .button-product:hover {
+    background-color: white;
+    color: #221902;
+  }
+  .menu-container {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #221902; 
+    padding: 20px;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+  .menu-button {
+    padding: 20px 30px;
+    border: 1px solid #f1f1f1;
+    text-decoration: none;
+    background-color: #221902;
+    color: white;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  .menu-button:hover {
+    background-color: white;
+    color: #221902;
+  }
+  .like-icon {
+    font-size: 40px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-top: 20px;
+  }
+  .like-icon.liked {
+    color: #ff0000;
+  }
+  .quantity-container button {
+    padding: 5px 10px;
+    background-color: #221902;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  .quantity-container input {
+    width: 40px;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .quantity-container button:hover {
+    background-color: #fff;
+    color: #221902;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #221902;
+    color: white;
+  }
+  .total-price {
+    font-size: 18px;
+    color: #221902;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  #snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+  0% {
+      transform: translateY(0);
+  }
+
+  100% {
+      transform: translateY(100vh);
+  }
+}

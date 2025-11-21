@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điền Thông Tin Đặt Hàng</title>
+    <link rel="stylesheet" href="thongtin.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Vui Lòng Để Lại Thông Tin Nhé</h2>
+        <form id="order-form" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Họ và Tên</label>
+                <input type="text" id="name" name="name" placeholder="Nhập họ và tên của bạn" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Nhập email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Số Điện Thoại</label>
+                <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+            </div>
+            <button type="submit" class="submit-button">XÁC NHẬN THÔNG TIN</button>
+        </form>
+    </div>
+    <!-- Nút Hotline và Zalo cố định góc dưới bên phải -->
+    <div id="fixed-contact-buttons"
+        style="position: fixed; right: 20px; bottom: 80px; z-index: 9999; display: flex; flex-direction: column; gap: 10px;">
+        <a href="tel:0123456789"
+            style="background: #ff5722; color: #fff; padding: 10px 18px; border-radius: 30px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15); font-weight: bold; text-align: center;">Hotline</a>
+        <a href="https://zalo.me/0123456789" target="_blank"
+            style="background: #008fe5; color: #fff; padding: 10px 18px; border-radius: 30px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15); font-weight: bold; text-align: center;">Zalo</a>
+    </div>
+
+    <script>
+        function validateForm() {
+            const form = document.getElementById("order-form");
+
+            if (!form.checkValidity()) {
+                alert("Vui lòng điền đầy đủ thông tin trước khi gửi!");
+                return false;
+            }
+
+            const orderInfo = {
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value
+            };
+
+            // Lưu thông tin vào localStorage
+            localStorage.setItem("orderInfo", JSON.stringify(orderInfo));
+
+            alert("✅ Thông tin của bạn đã được lưu!");
+            window.location.href = "trangchu.html"; // Quay lại trang chủ
+            return false; // Ngăn form reload lại trang
+        }
+    </script>
+
+    <div class="mota">
+        <img style="width: 100%;" src="ảnh\khoa hoc nhom.png" alt="Khóa học nhóm"></br>
+        Khóa học nhóm được thiết kế dành cho học viên ở mọi độ tuổi yêu thích âm nhạc và mong muốn học trong môi trường
+        năng động, có tính tương tác cao. Mỗi lớp thường có từ 4–6 học viên, giúp đảm bảo không khí vui tươi nhưng vẫn
+        giữ được sự quan tâm cá nhân từ giảng viên.
+
+        Trong các buổi học, học viên được tham gia luyện tập hòa âm, tiết tấu, kỹ năng biểu diễn và cảm thụ âm nhạc, qua
+        đó rèn luyện khả năng phối hợp và giao tiếp trong nhóm. Đặc biệt, trung tâm thường xuyên tổ chức buổi trình diễn
+        định kỳ giúp học viên tự tin thể hiện bản thân trên sân khấu, đồng thời tăng tính gắn kết giữa các thành viên.
+
+        Phương pháp giảng dạy kết hợp giữa thực hành và trải nghiệm, khuyến khích học viên thể hiện sáng tạo cá nhân
+        trong môi trường vui vẻ và thân thiện. Đây là khóa học lý tưởng cho trẻ em và người mới bắt đầu muốn tiếp cận âm
+        nhạc một cách nhẹ nhàng, tự nhiên.
+    </div>
+</body>
+
+</html>
